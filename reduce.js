@@ -23,7 +23,7 @@ export const reduce = (arr, callback, initialValue) => {
       }
     } else if(Array.isArray(accumulator)){
       for(let i = 1; i < arr.length; i++){
-        accumulator[i] = callback(accumulator, arr[i]);
+        accumulator[i - 1] = callback(accumulator, arr[i]);
       }
     } else if(typeof accumulator === 'object'){
       for(let i = 1; i < arr.length; i++){
